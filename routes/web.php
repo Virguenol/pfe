@@ -27,7 +27,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/redirect', [HomeController::class, 'redirect']);
+Route::get('/redirect', [HomeController::class, 'redirect'])->middleware('auth','verified');
 
 //categories
 Route::get('/view_category', [AdminController::class, 'view_category'])->name('view_category');
@@ -56,6 +56,14 @@ Route::get('/stripe/{totalprice}', [HomeController::class, 'stripe'])->name('str
 
 Route::post('stripe/{totalprice}',[HomeController::class, 'stripePost'])->name('stripe.post');
 
+
+
+Route::get('/order', [AdminController::class, 'order'])->name('order');
+Route::get('/delivered/{id}', [AdminController::class, 'delivered'])->name('delivered');
+Route::get('/print_pdf/{id}', [AdminController::class, 'print_pdf'])->name('print_pdf');
+
+Route::get('/send_email/{id}', [AdminController::class, 'send_email'])->name('send_email');
+Route::post('/send_user_email/{id}', [AdminController::class, 'send_user_email'])->name('send_user_email');
 
 
 //Ecommerce2022*/

@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use PDF;
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Notifications\SendEmailNotification;
+use Illuminate\Support\Facades\Notification;
 
 class AdminController extends Controller
 {
@@ -107,5 +112,54 @@ class AdminController extends Controller
 
         $product->save();
         return redirect()->back()->with('message', 'le produit a bien été Ajouter');
+    }
+
+    public function order()
+    {
+        $orders = Order::all();
+        return view('admin.orders.order', compact('orders'));
+    }
+//commande livrais
+    public function delivered($id)
+    {
+         $order = Order::find($id);
+         $order->delivery_status = "Livrer";
+         $order->payment_status='payer';
+         $order->save();
+
+         return redirect()->back();
+    }
+
+    //pdf
+    public function print_pdf($id)
+    {
+        $order = Order::find($id);
+        $pdf = PDF::loadView('admin.pdfs.pdf', compact('order'));
+        return $pdf->download('order_details.pdf');
+    }
+
+    //Envoyer le mail formulaire
+    public function send_email($id)
+    {
+        $order = Order::find($id);
+        return view('admin.emails.email_info', compact('order'));
+    }
+
+    //Envoi du mail
+    public function send_user_email(Request $request, $id)
+    {
+
+        $order = Order::find($id);
+
+        $details = [
+            'greeting' => $request->greeting,
+            'firstline' => $request->firstline,
+            'body' => $request->body,
+            'button' => $request->button,
+            'url' => $request->url,
+            'lastline' => $request->lastline,
+        ];
+
+        Notification::send($order, new SendEmailNotification($details));
     }
 }

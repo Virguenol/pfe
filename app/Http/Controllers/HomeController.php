@@ -51,7 +51,7 @@ class HomeController extends Controller
             $cart->name = $user->name;
             $cart->email = $user->email;
             $cart->phone = $user->phone;
-            $cart->adress = $user->address;
+            $cart->address = $user->address;
             $cart->user_id = $user->id;
 
             $cart->product_title = $product->title;
@@ -120,7 +120,7 @@ class HomeController extends Controller
             $order->product_id = $data->product_id;
 
             $order->payment_status = 'payer a la livraison';
-            $order->delivery_status = 'processing';
+            $order->delivery_status = 'En traitement...';
 
             $order->save();
 
