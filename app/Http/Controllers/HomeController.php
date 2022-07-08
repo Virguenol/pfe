@@ -223,4 +223,11 @@ class HomeController extends Controller
         $order = Order::find($id);
         $order->delivery_status = 'Annuler';
     }
+
+    public function product_search(Request $request)
+    {
+        $serach_text = $request->search;
+        $product = Product::where('title','LIKE', "%serach_text%")->paginate(10);
+        return view('home.userpage', compact('product'));
+    }
 }

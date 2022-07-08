@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Notifications\SendEmailNotification;
 use Illuminate\Support\Facades\Notification;
 
@@ -171,5 +172,11 @@ class AdminController extends Controller
         $orders = Order::where('name','LIKE',"%searchText%")->orWhere('phone','LIKE',"%searchText%")->orWhere('product_title','LIKE',"%searchText%")->get();
         return view('admin.orders.order', compact('orders'));
 
+    }
+
+    public function index_user(Request $request, $id)
+    {
+        $user = User::find($id);
+        return view('admin.sidebar', compact('user'));
     }
 } 

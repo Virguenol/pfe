@@ -7,38 +7,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <ul class="navbar-nav">
-                <li class="nav-item active">
-                   <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
-                </li>
-               <li class="nav-item dropdown">
-                   <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
-                   <ul class="dropdown-menu">
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="testimonial.html">Testimonial</a></li>
-                   </ul>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="product.html">Products</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="blog_list.html">Blog</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="contact.html">Contact</a>
-                </li>
+               <form method="POST" action="{{url('product_search')}}" class="input-group mb-3" style="text-align:center;">
+                  <input type="text" name="search" style="width: 500px;" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+               </form>
                 <li class="nav-item">
                   <a class="nav-link" href="{{url('/show_cart')}}">Panier</a>
                </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="{{url('/show_order')}}">Order</a>
-               </li>
-
-                <form class="form-inline">
-                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                 </form>
-
                  @if(Route::has('login'))
 
                  @auth
@@ -62,5 +37,34 @@
              </ul>
           </div>
        </nav>
+
+       <nav class="navbar navbar-expand-lg custom_nav-container" >
+         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="text-align: center;">
+            <ul class="navbar-nav" style="text-align: center;">
+               <li class="nav-item active">
+                  <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+               </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="about.html">About</a></li>
+                     <li><a href="testimonial.html">Testimonial</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="product.html">Boutique</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="blog_list.html">Blog</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="{{url('/show_order')}}">Order</a>
+              </li>
+            </ul>
+         </div>
+      </nav>
     </div>
  </header>

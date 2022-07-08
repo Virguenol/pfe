@@ -1,6 +1,6 @@
 <section class="slider_section ">
     <div class="slider_bg_box">
-       <img src="images/slider-bg.jpg" alt="">
+       <img src="images/slider-bg.png" alt="">
     </div>
     <div id="customCarousel1" class="carousel slide" data-ride="carousel">
        <div class="carousel-inner">
@@ -11,10 +11,10 @@
                       <div class="detail-box">
                          <h1>
                             <span>
-                            Sale 20% Off
+                           Vente 20 % de réduction
                             </span>
                             <br>
-                            On Everything
+                            Sur tout
                          </h1>
                          <p>
                             Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
@@ -36,10 +36,10 @@
                       <div class="detail-box">
                          <h1>
                             <span>
-                            Sale 20% Off
+                              Vente 20 % de réduction
                             </span>
                             <br>
-                            On Everything
+                            Sur tout
                          </h1>
                          <p>
                             Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
@@ -61,10 +61,10 @@
                       <div class="detail-box">
                          <h1>
                             <span>
-                            Sale 20% Off
+                           Vente 20 % de réduction
                             </span>
                             <br>
-                            On Everything
+                            Sur tout
                          </h1>
                          <p>
                             Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
