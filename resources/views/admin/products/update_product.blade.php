@@ -56,32 +56,32 @@
                         @csrf
                         <div class="form-group ">
                             <label for="exampleInputUsername1">Nom produit</label>
-                            <input type="text" class=" form-control"    value="{{$product->title}}" name="title" placeholder="Nom produit">
+                            <input style="background-color:rgb(11, 10, 10);" type="text" class=" form-control"    value="{{$product->title}}" name="title" placeholder="Nom produit">
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Description produit</label>
-                            <textarea type="text" class="form-control"  name="description"  value="{{$product->description}}" name="description" placeholder="Description produit"></textarea>
+                            <textarea style="background-color:rgb(11, 10, 10);" type="text" class="form-control"  name="description"  value="{{$product->description}}" name="description" placeholder="Description produit"></textarea>
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Prix produit</label>
-                            <input type="text" class="form-control"  name="price"  value="{{$product->price}}" name="price" placeholder="Prix produit">
+                            <input style="background-color:rgb(11, 10, 10);" type="text" class="form-control"  name="price"  value="{{$product->price}}" name="price" placeholder="Prix produit">
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Quantité</label>
-                            <input type="text" class="form-control"  name="quantity"  value="{{$product->quantity}}" name="quantity" placeholder="quantité">
+                            <input style="background-color:rgb(11, 10, 10);" type="text" class="form-control"  name="quantity"  value="{{$product->quantity}}" name="quantity" placeholder="quantité">
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Remise produit</label>
-                            <input type="text" class="form-control"  name="discount_price"  value="{{$product->discount_price}}" name="discount_price" placeholder="remise produit">
+                            <input style="background-color:rgb(11, 10, 10);" type="text" class="form-control"  name="discount_price"  value="{{$product->discount_price}}" name="discount_price" placeholder="remise produit">
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Categorie produit</label>
-                            <select class="form-control" class="form-control"  name="category"  >
+                            <select class="form-control" class="form-control"  name="category"  style="background-color:rgb(11, 10, 10); color:white">
                                 <option value="{{$product->category}}" selected="">{{$product->category}}</option>       
                                 @foreach ($category as $category)
                                 <option value="{{$category->category_name}}">{{$category->category_name}}</option>       
@@ -96,10 +96,10 @@
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Changer l' image produit</label>
-                            <input type="file" class="form-control"  name="image"  name="title" placeholder="remise produit">
+                            <input style="background-color:rgb(11, 10, 10);" type="file" class="form-control"  name="image"  name="title" placeholder="remise produit">
                           </div>
                       
-                        <button type="submit" class="btn btn-primary mr-2">Modifier le produit</button>
+                        <button  type="submit" class="btn btn-primary mr-2">Modifier le produit</button>
                       </form>
                     </div>
                   </div>

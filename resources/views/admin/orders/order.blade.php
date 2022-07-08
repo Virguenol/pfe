@@ -15,7 +15,19 @@
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
+              
+               
+
             <div class="card">
+
+              <div class="card" style="text-align: center; margin:20px;">
+                <form action="{{url('search')}}" methode="get">
+                  @csrf
+                 <input type="text" name="search" class="" placeholder="Recherche..." >
+                  <input class="btn btn-sm btn-primary" value="Recherche..." type="submit" placeholder="Recherche..."> 
+              </form>
+            </div>
+
                     <div class="card-body">
                       <h4 class="card-title">Liste des commandes</h4>
                       </p>
@@ -39,7 +51,7 @@
                                 </tr>
                           </thead>
                           <tbody>
-                            @foreach($orders as $order)
+                            @forelse($orders as $order)
                                 <tr>
                                     <td>{{$order->name}}</td>
                                     <td>{{$order->email}}</td>
@@ -67,7 +79,14 @@
                                       <a href="{{url('send_email', $order->id)}}" class="btn btn-secondary" style="color: darkgreen">Envoyer mail</a>
                                     </td>
                                 </tr>
-                            @endforeach
+                                @empty
+                                <div>
+                                  <tr>
+                                    <td class="table">
+                                      <h1>Aucun nom ne correspond</h1></div> 
+                                    </td>
+                                  </tr> 
+                            @endforelse
                           </tbody>
                         </table>
                       </div>

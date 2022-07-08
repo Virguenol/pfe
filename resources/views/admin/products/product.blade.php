@@ -55,32 +55,32 @@
                         @csrf
                         <div class="form-group ">
                             <label for="exampleInputUsername1">Nom produit</label>
-                            <input type="text" class=" form-control"  name="title" required="" placeholder="Nom produit">
+                            <input style="background-color:rgb(11, 10, 10); color:white" type="text" class=" form-control"  name="title" required="" placeholder="Nom produit">
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Description produit</label>
-                            <textarea type="text" class="form-control"  name="description" required="" placeholder="Description produit"></textarea>
+                            <textarea style="background-color:rgb(11, 10, 10); color:white" type="text" class="form-control"  name="description" required="" placeholder="Description produit"></textarea>
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Prix produit</label>
-                            <input type="text" class="form-control"  name="price" required="" placeholder="Prix produit">
+                            <input style="background-color:rgb(11, 10, 10); color:white" type="text" class="form-control"  name="price" required="" placeholder="Prix produit">
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Quantité</label>
-                            <input type="text" class="form-control"  name="quantity" required="" placeholder="quantité">
+                            <input style="background-color:rgb(11, 10, 10); color:white" type="text" class="form-control"  name="quantity" required="" placeholder="quantité">
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Remise produit</label>
-                            <input type="text" class="form-control"  name="discount_price" required="" placeholder="remise produit">
+                            <input style="background-color:rgb(11, 10, 10); color:white" type="text" class="form-control"  name="discount_price" required="" placeholder="remise produit">
                           </div>
 
                           <div class="form-group">
                             <label for="exampleInputUsername1">Categorie produit</label>
-                            <select class="form-control" class="form-control"  name="category">
+                            <select class="form-control" class="form-control"  name="category"style="background-color:rgb(11, 10, 10); color:white" >
                                 <option value="" selected="">Category1</option>
                                 @foreach ($category as $category)
                                 <option value="">{{$category->category_name}}</option>
