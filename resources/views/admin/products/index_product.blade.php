@@ -57,7 +57,7 @@
                               <th> Produit </th>
                               <th> Description</th>
                               <th> Quantité </th>
-                              <th> Category </th>
+                              <th> Categorie </th>
                               <th> Prix </th>
                               <th> Remise </th>
                               <th> Image </th>

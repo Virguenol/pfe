@@ -230,4 +230,11 @@ class HomeController extends Controller
         $product = Product::where('title','LIKE', "%serach_text%")->paginate(10);
         return view('home.userpage', compact('product'));
     }
+
+    //blog
+
+    public function index_blog()
+    {
+        return view('home.blogs.blog');
+    }
 }

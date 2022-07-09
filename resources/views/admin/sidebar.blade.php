@@ -8,15 +8,15 @@
         <div class="profile-desc">
           <div class="profile-pic">
             <div class="count-indicator">
-              <img class="img-xs rounded-circle " src="assets/images/faces/face15.jpg" alt="">
+              
               <span class="count bg-success"></span>
             </div>
             <div class="profile-name">
               <h5 class="mb-0 font-weight-normal"></h5>
-              <span>Gold Member</span>
+              <span></span>
             </div>
           </div>
-          <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+         
           <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
             <a href="#" class="dropdown-item preview-item">
               <div class="preview-thumbnail">
@@ -54,7 +54,7 @@
         </div>
       </li>
       <li class="nav-item nav-category">
-        <span class="nav-link">Navigation</span>
+        
       </li>
 
       <li class="nav-item menu-items">

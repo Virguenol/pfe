@@ -36,7 +36,7 @@
                   </div>
                 </div>
               </div>
-              <h6 class="text-muted font-weight-normal">Total Orders</h6>
+              <h6 class="text-muted font-weight-normal">Total Commandes</h6>
             </div>
           </div>
         </div>
@@ -50,12 +50,12 @@
                   </div>
                 </div>
                 <div class="col-3">
-                  <div class="icon icon-box-danger">
+                  <div class="icon icon-box-success">
                     <span class="mdi mdi-arrow-bottom-left icon-item"></span>
                   </div>
                 </div>
               </div>
-              <h6 class="text-muted font-weight-normal">Total Customers</h6>
+              <h6 class="text-muted font-weight-normal">Nombre total de clients</h6>
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@
                   </div>
                 </div>
               </div>
-              <h6 class="text-muted font-weight-normal">Total Revenue</h6>
+              <h6 class="text-muted font-weight-normal">Total Revenu</h6>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@
                   </div>
                 </div>
               </div>
-              <h6 class="text-muted font-weight-normal">Order Delivered</h6>
+              <h6 class="text-muted font-weight-normal">Commande livrée</h6>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@
                   </div>
                 </div>
               </div>
-              <h6 class="text-muted font-weight-normal">Order Processing</h6>
+              <h6 class="text-muted font-weight-normal">commande en cours de traitement</h6>
             </div>
           </div>
         </div>

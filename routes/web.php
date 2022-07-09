@@ -73,7 +73,7 @@ Route::get('/cancel_order/{id}', [HomeController::class, 'cancel_order'])->name(
 
 Route::get('/product_search', [HomeController::class, 'product_search']);
 
-Route::get('/profil', [AdinController::class, 'profil']);
+Route::get('/blog', [HomeController::class, 'index_blog']);
 
 
 
