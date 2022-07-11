@@ -51,35 +51,20 @@
                     <div class="card-body">
                       <h4 class="card-title">Ajouter un produit</h4>
                      
-                      <form class="forms-sample" action="{{url('/add_product')}}" method="POST" enctype="multipart/form-data">
+                      <form class="forms-sample" action="{{url('/add_post')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group ">
-                            <label for="exampleInputUsername1">Nom produit</label>
+                            <label for="exampleInputUsername1">Titret</label>
                             <input style="background-color:rgb(11, 10, 10); color:white" type="text" class=" form-control"  name="title" required="" placeholder="Nom produit">
                           </div>
 
                           <div class="form-group">
-                            <label for="exampleInputUsername1">Description produit</label>
+                            <label for="exampleInputUsername1">Description</label>
                             <textarea style="background-color:rgb(11, 10, 10); color:white" type="text" class="form-control"  name="description" required="" placeholder="Description produit"></textarea>
                           </div>
 
                           <div class="form-group">
-                            <label for="exampleInputUsername1">Prix produit</label>
-                            <input style="background-color:rgb(11, 10, 10); color:white" type="text" class="form-control"  name="price" required="" placeholder="Prix produit">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="exampleInputUsername1">Quantité</label>
-                            <input style="background-color:rgb(11, 10, 10); color:white" type="text" class="form-control"  name="quantity" required="" placeholder="quantité">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="exampleInputUsername1">Remise produit</label>
-                            <input style="background-color:rgb(11, 10, 10); color:white" type="text" class="form-control"  name="discount_price" placeholder="remise produit">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="exampleInputUsername1">Categorie produit</label>
+                            <label for="exampleInputUsername1">Categorie</label>
                             <select class="form-control" class="form-control"  name="category"style="background-color:rgb(11, 10, 10); color:white" >
                                 <option value="" selected="">Category1</option>
                                 @foreach ($category as $category)
@@ -89,11 +74,10 @@
                           </div>
 
                           <div class="form-group">
-                            <label for="exampleInputUsername1">image produit</label>
-                            <input type="file" class="form-control"  name="image" required="" placeholder="remise produit">
+                            <label for="exampleInputUsername1">image</label>
+                            <input type="file" class="form-control"  name="image" required="">
                           </div>
-                      
-                        <button type="submit" class="btn btn-primary mr-2">Ajouter produit</button>
+                        <button type="submit" class="btn btn-primary mr-2">Ajouter poste</button>
                       </form>
                     </div>
                   </div>

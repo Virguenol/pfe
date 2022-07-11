@@ -47,17 +47,26 @@
                 </div>
 
                 @endif
-                <div class="div_center">
-                    <h2 class="h2_font"> Ajouter les Categories</h2>
-
-                    <form action="{{url('/add_category')}}" method="POST">
-                        @csrf
-                        <div class="add-items d-flex">
-                        <input class="input_color form-control todo-list-input" type="text" name="category" placeholder="categorie">
-                        <input class="btn btn-primary " type="submit" name="submit" value="Ajouter Category">
+                <div class="card" style="margin-bottom:50px;">
+                  <div class="card-body">
+                    <h2 class="h2_font"> Ajouter une categorie</h2>
+                   
+                    <form class="forms-sample" action="{{url('/add_category')}}" method="POST" enctype="multipart/form-data">
+                      @csrf
+                      <div class="form-group ">
+                          <label for="exampleInputUsername1">Categorie</label>
+                          <input style="background-color:rgb(11, 10, 10); color:white" type="text" class=" form-control"  name="category" required="" placeholder="categorie">
                         </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">image</label>
+                          <input type="file" class="form-control"  name="image" required="">
+                        </div>
+                      <button type="submit" class="btn btn-primary mr-2">Ajouter poste</button>
                     </form>
+                  </div>
                 </div>
+
 
                 <div class="card">
                     <div class="card-body">
@@ -68,7 +77,7 @@
                             <tr>
                               <th>N-°</th>
                               <th> Categorie </th>
-                              <th> Sous categories</th>
+                              <th> Images </th>
                               <th> date de création </th>
                               <th> Action </th>
                             </tr>
@@ -78,8 +87,10 @@
                                 <tr>
                                 <td> {{$data->id}}</td>
                                 <td> {{$data->category_name}} </td>
-                                <td> {{$data->id}} </td>
-                                <td> {{$data->created_at}} </td>
+                                <td>
+                                  <img src="/categories/{{$data->image}}">
+                                </td>
+                                  <td> {{$data->created_at}} </td>
                                 <td> 
                                     <a onclick="return confirm('Vous ^ztes sur de supprimer cette categorie?')" class="badge badge-danger" href="{{url('delete_category',$data->id)}}">supprimer</a>
                                 </td>

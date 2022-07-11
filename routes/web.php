@@ -73,7 +73,15 @@ Route::get('/cancel_order/{id}', [HomeController::class, 'cancel_order'])->name(
 
 Route::get('/product_search', [HomeController::class, 'product_search']);
 
-Route::get('/blog', [HomeController::class, 'index_blog']);
+//blog
+Route::get('/view_post', [AdminController::class, 'view_post'])->name('view_post');
+Route::post('/add_post', [AdminController::class, 'add_post'])->name('add_post');
+Route::get('/index_post', [AdminController::class, 'index_post'])->name('index_post');
+Route::get('/delete_post/{id}', [AdminController::class, 'delete_post'])->name('delete_post');
+Route::get('/update_post/{id}', [AdminController::class, 'update_post'])->name('update_post');
+Route::post('/update_post_confirm/{id}', [AdminController::class, 'update_post_confirm'])->name('update_blog_confirm');
+
+Route::get('/blog', [HomeController::class, 'index_blog'])->name('blog');
 
 
 

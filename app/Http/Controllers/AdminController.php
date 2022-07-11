@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use PDF;
+use App\Models\Post;
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Notifications\SendEmailNotification;
 use Illuminate\Support\Facades\Notification;
 
@@ -25,6 +26,14 @@ class AdminController extends Controller
     {
         $data=new Category();
         $data->category_name = $request->category;
+
+        $image = $request->image;
+
+        $imagename=time().'.'.$image->getClientOriginalExtension();
+
+        $request->image->move('categories', $imagename);
+
+        $data->image =  $imagename;
 
         $data->save();
 
@@ -178,5 +187,74 @@ class AdminController extends Controller
     {
         $user = User::find($id);
         return view('admin.sidebar', compact('user'));
+    }
+
+    //blog
+
+    public function view_post()
+    {
+        $category = Category::all();
+        return view('admin.blogs.post', compact('category'));
+    }
+
+    public function add_post(Request $request)
+    {
+        $post = new Post();
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->category = $request->category;
+
+        $image = $request->image;
+        $imagename=time().'.'.$image->getClientOriginalExtension();
+
+        $request->image->move('blogs', $imagename);
+
+        $post->image =  $imagename;
+        
+
+        $post->save();
+        return redirect()->back()->with('message', 'le post a bien été Ajouter');
+    }
+
+    public function index_post()
+    {
+        $posts = Post::all();
+        return view('admin.blogs.index_post', compact('posts'));
+    }
+
+    public function delete_blog($id)
+    {
+        $data=Post::find($id);
+
+        $data->delete();
+        return redirect()->back()->with('message', 'le post a bien été supprimer');    
+    }
+
+    public function update_post($id)
+    {
+        $post = Post::find($id);
+        $category = Category::all();
+        
+        return view('admin.blogs.update_post', compact('post','category'));
+    }
+
+    public function update_post_confirm(Request $request,$id)
+    {
+        $post = Post::find($id);
+
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->category = $request->category;
+
+        $image = $request->image;
+        $imagename=time().'.'.$image->getClientOriginalExtension();
+
+        $request->image->move('post', $imagename);
+
+        $post->image =  $imagename;
+        
+
+        $post->save();
+        return redirect()->back()->with('message', 'le poste a bien été Modifier');
     }
 } 

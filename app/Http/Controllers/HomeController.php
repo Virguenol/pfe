@@ -2,23 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use Stripe;
+use Session;
 use App\Models\Cart;
+use App\Models\Post;
+use App\Models\User;
 use App\Models\Order;
 use App\Models\Product;
-use App\Models\User;
+
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
-use Session;
-use Stripe;
 
 class HomeController extends Controller
 {
     
     public function index()
     {
-        $product = Product::paginate(10);
-        return view('home.userpage', compact('product'));
+        $data = Category::all();
+        $product = Product::paginate(6);
+        return view('home.userpage', compact('product', 'data'));
     }
     public function redirect()
     {
@@ -46,8 +49,9 @@ class HomeController extends Controller
         }
         else
         {
-            $product = Product::paginate(10);
-            return view('home.userpage',compact('product'));
+            $product = Product::paginate(6);
+            $data = Category::all();
+            return view('home.userpage',compact('product', 'data'));
         }
     }
 
@@ -231,10 +235,10 @@ class HomeController extends Controller
         return view('home.userpage', compact('product'));
     }
 
-    //blog
-
     public function index_blog()
     {
-        return view('home.blogs.blog');
+        return view('home.index');
     }
+
+
 }
