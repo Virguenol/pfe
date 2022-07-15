@@ -13,7 +13,117 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
 }
+/*l'en tête 
+nav {
+  background-color: #f33c3c;
+  color: white;
+  padding: 20px 50px;
+}
 
+.navTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search {
+  display: flex;
+  align-items: center;
+  background-color: gray;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+#searchInut {
+  border: none;
+  background-color: transparent;
+}
+#searchInut::placeholder{
+  color: white;
+}
+.limitedeOffer {
+  font-size: 20px;
+  border-bottom: 2px solid black;
+}
+.navBottom ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navBottom ul li {
+  margin-right: 50px;
+  cursor: pointer;
+  color: lightcyan;
+  font-weight: 400;
+}
+/*slider
+.slider {
+  background: url("/images/slider-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center top; 
+  background-size: cover;
+  height: 600px;
+}
+
+.sliderWrapper{
+  display: flex;
+  width: 500vw;
+}
+
+.sliderItem {
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sliderImg {
+  z-index: 1;
+}
+
+.sliderTitle {
+  left: 20px;
+  font-size: 60px;
+  text-align: 900;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.sliderPrice {
+  font-size: 60px;
+  text-align: 300;
+  text-align: center;
+  color: white;
+  border:  1px solid gray;
+  z-index: 1;
+}
+
+.buyButton{
+  font-size: 60px;
+  text-align: 900;
+  color: white;
+  border:  1px solid gray;
+  background-color: black;
+  z-index: 1;
+  cursor: pointer;
+}
+.buyButton:hover{
+  background-color: white;
+  color: black;
+}
+.sliderItem:nth-child(1) .slideBg{
+  background-color: rgb(47, 255, 0);
+}
+
+.sliderItem:nth-child(2) .slideBg{
+  background-color: rgb(226, 50, 232);
+}
+
+.sliderItem:nth-child(3) .slideBg{
+  background-color: rgb(65, 62, 65);
+}
+*/
+
+
+/* fin en tête*/
 .layout_padding {
   padding: 70px 0;
 }
@@ -349,7 +459,7 @@ a:focus {
   width: 100%;
   height: 100%;
   z-index: -1;
-  padding: 20px 100px;
+  padding: 10px 10px;
 }
 
 .slider_bg_box img {
