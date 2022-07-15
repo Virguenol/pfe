@@ -6,6 +6,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <!-- Mobile Metas -->
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, intial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
       <!-- Site Metas -->
       <meta name="keywords" content="" />
       <meta name="description" content="" />
@@ -43,20 +44,16 @@
       <!-- end product section -->
 
       <!-- subscribe section -->
-      @include('home.sbscrib')
+      @include('home.blog')
       <!-- end subscribe section -->
       <!-- client section -->
-      @include('home.client')
+     
       <!-- end client section -->
       <!-- footer start -->
       @include('home.footer')
       <!-- footer end -->
       <div class="cpy_">
-         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
-         
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-         
-         </p>
+         <p class="mx-auto">© 2021 Alisungi <a href="/"></a><br> </p>
       </div>  
       <!-- jQery -->
       <script src="home/js/jquery-3.4.1.min.js"></script>

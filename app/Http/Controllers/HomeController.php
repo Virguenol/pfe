@@ -237,7 +237,14 @@ class HomeController extends Controller
 
     public function index_blog()
     {
-        return view('home.index');
+        $posts = Post::latest()->get();
+        return view('home.blogs.index', compact('posts'));
+    }
+
+    public function show_post(Post $post)
+    {
+        $posts = Post::all();
+        return view('home.blogs.show', compact('posts'));
     }
 
 

@@ -38,7 +38,7 @@
          <!-- end header section -->
          <!-- slider section -->
          
-         <div class="col-sm-6 col-md-4 col-lg-4" style="margin: auto; width: 50%; padding:30px">
+         <div class="col-sm-6 col-md-4 col-lg-4 flex" style="margin: auto; width: 50%; padding:30px">
                <div class="img-box" style="20px">
                   <img width="75%" src="product/{{$products->image}}" alt="">
                </div>

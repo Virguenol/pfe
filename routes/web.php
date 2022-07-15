@@ -82,6 +82,7 @@ Route::get('/update_post/{id}', [AdminController::class, 'update_post'])->name('
 Route::post('/update_post_confirm/{id}', [AdminController::class, 'update_post_confirm'])->name('update_blog_confirm');
 
 Route::get('/blog', [HomeController::class, 'index_blog'])->name('blog');
+Route::get('/show_post/{post}', [HomeController::class, 'show_post'])->name('show_post');
 
 
 

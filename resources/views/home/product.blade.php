@@ -7,9 +7,9 @@
             <h2>Nos Produits</h2>
             <div class="row">
                @foreach ($product as $products)
-               <div class="col-sm-6 col-md-4 col-lg-4 border" style="flex-basis: 25%; padding:20px; margin:10px; 10px; min_width:200px; margin_bottom:50px;  transform: translateY(-5);">
+               <div class="col-sm-6 col-md-4 col-lg-4 border" style="flex-basis: 25%; padding:20px; margin:10px; 10px; minwidth:200px; margin_bottom:50px;  transform: translateY(-5);">
                   <div class="">
-                     <img src="product/{{$products->image}}" alt="" style="width: 100%;" >
+                     <img src="product/{{$products->image}}" alt="" style="width: 100%; hover:{transform:translateY(-5);}" >
                   </div>
                   <h4>{{$products->title}}</h4>
                   <div class="rating">
