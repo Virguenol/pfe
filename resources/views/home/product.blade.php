@@ -1,10 +1,10 @@
-<section class="product_section layout_padding ">
+<section class="product_section layout_padding ">            
    <div class="container" >
+       <h1 class="p-3 mb-2 bg-danger text-white fs-1" style="font-size:30px; min-width:200px; margin-top:20px;">Nos produits</h1>
       <div class="heading_container heading_center">
       
          <!--featured products ---->
          <div class="small-container" style="max-width: 1080px; margin:auto; padding-left:25px; padding-right:25px;">
-            <h2>Nos Produits</h2>
             <div class="row">
                @foreach ($product as $products)
                <div class="col-sm-6 col-md-4 col-lg-4 border" style="flex-basis: 25%; padding:20px; margin:10px; 10px; minwidth:200px; margin_bottom:50px;  transform: translateY(-5);">

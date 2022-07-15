@@ -21,7 +21,8 @@ class HomeController extends Controller
     {
         $data = Category::all();
         $product = Product::paginate(6);
-        return view('home.userpage', compact('product', 'data'));
+        $sale = Product::where('discount_price', '!=', 'null')->get();
+        return view('home.userpage', compact('product', 'data', 'sale'));
     }
     public function redirect()
     {
@@ -50,8 +51,9 @@ class HomeController extends Controller
         else
         {
             $product = Product::paginate(6);
+            $sale = Product::where('discount_price', '!=', 'null')->get();
             $data = Category::all();
-            return view('home.userpage',compact('product', 'data'));
+            return view('home.userpage',compact('product', 'data', 'sale'));
         }
     }
 

@@ -8,7 +8,7 @@
              <div class="container ">
                 <div class="row">
                    <div class="col-md-7 col-lg-6 ">
-                      <div class="detail-box">
+                      <div class="detail-box" style="margin-right: 200px">
                          <h1>
                             <span>
                            Vente 20 % de réduction

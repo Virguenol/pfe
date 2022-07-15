@@ -262,6 +262,7 @@ a:focus {
           align-items: center;
   position: relative;
   padding: 90px 0 75px 0;
+  width: 100%;
 }
 
 .slider_section .row {
@@ -407,14 +408,14 @@ a:focus {
 }
 
 .product_section .box .detail-box h5 {
-  font-size: 18px;
+  font-size: 10px;
   margin-top: 10px;
 }
 
 .product_section .box .detail-box h6 {
   margin-top: 10px;
   color: #002c3e;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .product_section .box:hover img {
@@ -1239,6 +1240,27 @@ text-align: center;
 }
 .titre_categorie:hover{
   background-color: #f7444e;
+}
+.discount_price{
+  background-color: red;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1rem;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.sale{
+  border: 1px black solid;
+  max-width: 80%;
+  margin: 20px 0;
+  
+}
+.saleproduit .col-4{
+ width: 25%;
+  
 }
 
 http://kute-themes.com/html/boutique/html/index.html
