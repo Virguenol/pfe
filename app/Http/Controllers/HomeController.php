@@ -156,6 +156,7 @@ class HomeController extends Controller
         return redirect()->back()->with('message','Nous avons reçu votre commande. Nous vous recontacterons bientôt...');
     }
 
+
     public function stripe($totalprice)
     {
         return view('home.carts.stripe', compact('totalprice'));
@@ -208,14 +209,14 @@ class HomeController extends Controller
         return back();
     }
 
+    /* Commande du client*/
     public function show_order()
     {
         if(Auth::id())
         {
             $user = Auth::user();
             $userid = $user->id;
-
-            $order = Order::where('user_id', '=', '$userid')->get();
+            $order = Order::where('user_id', '=', $userid)->get();
             return view('home.orders.order', compact('order'));
         }
         else
@@ -228,13 +229,18 @@ class HomeController extends Controller
     {
         $order = Order::find($id);
         $order->delivery_status = 'Annuler';
+        $order->save();
+        return redirect()->back();
     }
 
+    /*recherche*/
     public function product_search(Request $request)
-    {
-        $serach_text = $request->search;
-        $product = Product::where('title','LIKE', "%serach_text%")->paginate(10);
-        return view('home.userpage', compact('product'));
+    {   
+        $sale = Product::where('discount_price', '!=', 'null')->get();
+        $data = Category::all();
+        $search_text = $request->search;
+        $product = Product::where('title','LIKE', "%search_text%")->paginate(10);
+        return view('home.userpage', compact('product', 'data', 'sale'));
     }
 
     public function index_blog()

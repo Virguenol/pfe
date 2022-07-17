@@ -36,10 +36,10 @@
                       <div class="detail-box">
                          <h1>
                             <span>
-                              Vente 20 % de réduction
+                              Skareboard électrique
                             </span>
                             <br>
-                            Sur tout
+                            pour tous
                          </h1>
                          <p>
                             
@@ -61,10 +61,10 @@
                       <div class="detail-box">
                          <h1>
                             <span>
-                           Vente 20 % de réduction
+                              Balance Stand Up Scooter 
                             </span>
                             <br>
-                            Sur tout
+                            Électrique
                          </h1>
                          <p>
                             

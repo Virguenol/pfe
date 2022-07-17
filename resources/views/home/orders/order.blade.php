@@ -68,10 +68,9 @@
                 </tr>
             </thead>
             <tbody>
-               
                 @foreach($order as $order)
                 <tr>
-                <th scope="row">{{$order->product_title}}</th>
+                    <td>{{$order->product_title}}</td>
                     <td>{{$order->quantity}}</td>
                     <td>{{$order->price}}</td>
                     <td>{{$order->payement_status}}</td>
@@ -79,15 +78,13 @@
                     <td style="width:50px"><img src="/product/{{$order->image}}"></td>
                     
                     <td>
-                        @if(order->delivery_status == 'En traitement...')
-                          <a href="{{url('cancel_order', $order->id)}}" class="btn btn-danger" onclick="return confirm('d\'annuler la commande')">Supprimer</a>
-
+                        @if($order->delivery_status == 'En traitement...')
+                          <a href="{{url('cancel_order', $order->id)}}" class="btn btn-danger" onclick="return confirm('d\'annuler la commande')">Annuler</a>
                           @else
-                            <p slyle="clor: blue; ">Not Allowed</p>
+                            <p slyle="clor: blue; ">Déjà livrer</p>
                         @endif
                     </td>
                 </tr>
-
 
                 @endforeach
             </tbody>

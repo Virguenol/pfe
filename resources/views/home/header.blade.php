@@ -2,15 +2,15 @@
 <header class="header_section">
     <div class="container">
        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="{{url('/')}}"><img width="250" src="images/logo.png" alt="#" /></a>
+          <a class="navbar-brand" href="{{url('/')}}"><img width="200" src="images/logo.png" alt="#" /></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class=""> </span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent ">
              <ul class="navbar-nav">
-               <form method="POST" action="{{url('product_search')}}" class="input-group mb-3" style="text-align:center;">
-                  <input type="text" name="search" style="width: 500px;" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+               <form method="GET" action="{{url('product_search')}}" class="input-group mb-3" style="text-align:center;">
+                  <input style="width: 500px;" type="text" name="search" style="width: 500px;" class="form-control" placeholder="Recherche..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                  <input class="" type="submit"  value="search">
                </form>
                 <li class="nav-item">
                   <a class="nav-link" href="{{url('/show_cart')}}">Panier</a>
@@ -36,7 +36,7 @@
                  @endif
 
              </ul>
-          </div>
+          </div> 
        </nav>
 
        <nav class="navbar navbar-expand-lg custom_nav-container" >
