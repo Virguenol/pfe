@@ -84,6 +84,12 @@ Route::post('/update_post_confirm/{id}', [AdminController::class, 'update_post_c
 Route::get('/blog', [HomeController::class, 'index_blog'])->name('blog');
 Route::get('/show_post/{post}', [HomeController::class, 'show_post'])->name('show_post');
 
+Route::get('/products', [HomeController::class, 'product']);
+
+Route::get('/search_product', [HomeController::class, 'product_product']);
+
+
+
 
 
 

@@ -5,6 +5,12 @@
       
          <!--featured products ---->
          <div class="small-container" style="max-width: 1080px; margin:auto; padding-left:25px; padding-right:25px;">
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+                <button class="close" type="button" data-dismiss="alert" aria-hidden="true">x</button>
+             {{session()->get('message')}}
+            </div>
+            @endif
             <div class="row">
                @foreach ($product as $products)
                <div class="col-sm-6 col-md-4 col-lg-4 border" style="flex-basis: 25%; padding:20px; margin:10px; 10px; minwidth:200px; margin_bottom:50px;  transform: translateY(-5);">

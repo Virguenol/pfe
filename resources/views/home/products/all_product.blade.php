@@ -32,21 +32,11 @@
          <!-- end slider section -->
       </div>
       <!-- why section -->
-      @include('home.categories')
-      <!-- end why section -->
-      
-      <!-- arrival section -->
-      @include('home.new_arival')
-      <!-- end arrival section -->
       
       <!-- product section -->
       @include('home.product')
       <!-- end product section -->
 
-      <!-- subscribe section -->
-      @include('home.blog')
-      <!-- end subscribe section -->
-      <!-- client section -->
      
       <!-- end client section -->
       <!-- footer start -->

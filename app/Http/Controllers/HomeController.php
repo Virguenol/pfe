@@ -68,8 +68,35 @@ class HomeController extends Controller
         if(Auth::id())
         {
             $user = Auth::user();
+
+            $userid = $user->id;
+
             $product = Product::find($id);
-            $cart = new Cart();
+
+            $product_exist_id = Cart::where('Product_id', '=', $id)->where('user_id', '=', $userid)->get('id')->first();
+
+            if($product_exist_id)
+            {
+                $cart = Cart::find($product_exist_id)->first();
+                $quantity = $cart->quantity;
+                $cart->quantity = $quantity + $request->quantity;
+
+                if($product->discount_price !=null)
+            {
+                $cart->price = $product->discount_price * $request->quantity;
+            }
+            else
+            {
+                $cart->price = $product->price * $cart->quantity;
+            }
+                $cart->save(); 
+                return redirect()->black()->with('message', 'Produit ajouter');
+
+            }
+
+            else
+            {
+                $cart = new Cart();
 
             $cart->name = $user->name;
             $cart->email = $user->email;
@@ -92,7 +119,11 @@ class HomeController extends Controller
             $cart->quantity = $request->quantity;
 
             $cart->save();
-            return redirect()->back();
+            return redirect()->back()->with('message', 'Produit ajouter');
+
+            }
+
+            
         }
         else
         {
@@ -238,8 +269,8 @@ class HomeController extends Controller
     {   
         $sale = Product::where('discount_price', '!=', 'null')->get();
         $data = Category::all();
-        $search_text = $request->search;
-        $product = Product::where('title','LIKE', "%search_text%")->paginate(10);
+        $serach_text = $request->search;
+        $product = Product::where('title','LIKE', "%serach_text%")->orWhere('category->','LIKE',"%serach_text%")->paginate(10);
         return view('home.userpage', compact('product', 'data', 'sale'));
     }
 
@@ -255,5 +286,21 @@ class HomeController extends Controller
         return view('home.blogs.show', compact('posts'));
     }
 
+    public function product()
+    {
+        $data = Category::all();
+        $product = Product::paginate(6);
+        $sale = Product::where('discount_price', '!=', 'null')->get();
+        return view('home.products.all_product', compact('product', 'data', 'sale'));
+    }
 
+    /*recherche*/
+    public function search_product(Request $request)
+    {   
+        $sale = Product::where('discount_price', '!=', 'null')->get();
+        $data = Category::all();
+        $serach_text = $request->search;
+        $product = Product::where('title','LIKE', "%serach_text%")->orWhere('category->','LIKE',"%serach_text%")->paginate(10);
+        return view('home.userpage', compact('product', 'data', 'sale'));
+    }
 }
